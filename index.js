@@ -40,7 +40,7 @@ function generateNumbers (current = 1, max = 10) {
 }
 
 // test for a second implementation
-// TODO: separate the main iteration to multiple, smaller ones
+// separating unique loop to multiple smaller ones; doesn't look very efficient
 
 function pumpIt () {
   const oneHundredThousand = 10e5;
