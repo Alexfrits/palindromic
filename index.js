@@ -1,7 +1,7 @@
 function stringify (radix) {
   return number => {
     return (number).toString(radix);
-  }
+  };
 }
 
 function reverseStr (str) {
@@ -42,14 +42,15 @@ function generateNumbers (current = 1, max = 10) {
 // test for a second implementation
 // TODO: separate the main iteration to multiple, smaller ones
 
-// const from1to10e5 = generateNumbers(1, 10e5);
-// const from10e5to20e5 = generateNumbers(10e5, 20e5);
-// const from20e5to30e5 = generateNumbers(20e5, 30e5);
+function pumpIt () {
+  const oneHundredThousand = 10e5;
+  const acc = [];
 
-// function pumpIt () {
-//   for(let i = 0; i < 10, i++) {
+  for(let i = 0; i < 10; i++) {
+    acc.concat(generateNumbers((i * oneHundredThousand) + 1, ((i + 1) * oneHundredThousand)));
+  }
 
-//   }
-// }
+  return acc;
+}
 
 // idea for a third implementation: try with a decreasing for loop
