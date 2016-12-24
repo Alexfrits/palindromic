@@ -54,3 +54,16 @@ function pumpIt () {
 }
 
 // idea for a third implementation: try with a decreasing for loop
+
+// fourth implementation: delegate heavy calculations to service worker
+if ('serviceWorker' in navigator) {
+  window.addEventListener('load', (event) => {
+    navigator.serviceWorker.register('/sw.js')
+      .then(registration => {
+        console.log('ServiceWorker registration successful with scope: ', registration.scope);
+      })
+      .catch(err => {
+        console.log('ServiceWorker registration failed: ', err);
+      });
+  });
+}
